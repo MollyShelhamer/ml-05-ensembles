@@ -21,85 +21,55 @@ to get the example projects running on your machine.
 
 ## Phase 4. Technical Modification
 
-Describe your small technical modification to the example project.
-
-Include:
-
-- What you changed
-- Why you chose that change
-- How you verified that it worked
-- What result, output, chart, metric, or behavior confirmed the change
-
-Compared with the example project,
-explain what is different and why the change matters.
-
-Was it easy, or surprisingly challenging and why do you think so?
+- I changed the random_state value in the train/test split.
+- I chose this change to make the split more consistent and reproducible.
+- I verified it by re-running the notebook and confirming the same split and results.
+- The main result was more reliable model evaluation.
+- Compared with the example project, this was a small but useful improvement.
+- It was easy to implement and made the analysis more dependable.
 
 ## Phase 5. Custom Project
 
-Describe your custom project and how you made your modeling decisions.
-
-Be specific about what changed from the example project.
+- This project keeps the example penguin classification workflow and adds a simple extension.
+- In Phase 4, I changed the random_state value to improve reproducibility.
+- In Phase 5, I added an ExtraTreesClassifier to compare it with the single tree,
+  random forest, and gradient boosting models.
 
 ### Basis and Data
 
-Describe the dataset, input, or example you started with.
-
-Include:
-
-- The original example dataset or input
-- The data source
-- Why you chose it, kept it, or changed it
-- Any important limitations or assumptions
+- The project uses the Seaborn penguins dataset.
+- I kept the original example dataset because it is small, structured, and well-suited
+  for comparing classification models.
 
 ### Modeling Approach
 
-Describe the problem type and modeling approach for this project.
-
-Include:
-
-- Is this supervised or unsupervised and how do you know
-- Is this classification, regression, clustering, recommendation, forecasting, or another type of ML task
-- What kind of target works well for this approach
-- Why your selected model or method is appropriate
+- This is a supervised classification task.
+- The goal is to predict the species label from numeric features such as bill length,
+  bill depth, flipper length, and body mass.
 
 ### Target
 
-Describe the example target variable.
-
-Then describe your chosen target variable.
-
-Explain how your target choice changes the modeling approach, interpretation, or evaluation.
+- The target variable is species.
+- I used the same target as the example project because it fits the classification
+  workflow and makes the comparison straightforward.
 
 ### Features
 
-Describe the example features.
-
-Then describe the features you used to predict your target.
-
-Explain what you changed, added, removed, or kept and why.
+- The features are the four numeric measurements listed above.
+- I kept these features because they are already used in the example and are directly
+  relevant to predicting species.
 
 ### Evaluation and Results
 
-Describe how you evaluated your model.
-
-Include:
-
-- The metric or evidence you used
-- The main result
-- Whether the result was useful, interesting, surprising, or disappointing
-- Any weakness, limitation, or next improvement
+- I evaluated the models using test accuracy on a held-out set.
+- The added ExtraTrees model was included to see whether it improved performance.
+- The result was useful for comparing model behavior, even if the gain was modest.
 
 ### Summary
 
-Summarize your custom project.
+- I extended the example workflow by changing the random_state value and adding
+  ExtraTrees to the ensemble comparison.
+- This helped me practice reproducibility and model comparison in a clear way.
+- The same approach could be applied to other classification problems in the future.
 
-Include:
-
-- How you implemented your custom model
-- What results you got
-- What you learned
-- How well you exercised the skills covered in this project
-- What kinds of real problems you could apply these skills to in the future
-
-Display at least one image or screenshot showing your work.
+![Ensemble comparison chart](../notebooks/figure.png)
